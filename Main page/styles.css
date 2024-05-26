@@ -1,0 +1,410 @@
+:root {
+  --dark-text: #f8fbff;
+  --light-body: #f3f8fe;
+  --light-main: #fdfdfd;
+  --light-second: #c3c2c8;
+  --light-hover: #f0f0f0;
+  --light-text: #151426;
+  --light-btn: #9796f0;
+  --blue: #0000ff;
+  --white: #fff;
+  --shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  --font: normal 1em/1.4 system-ui;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  place-items: center;
+  font: normal 1em/1.4 system-ui;
+  background: #cac8ff;
+}
+.container {
+  width: max-content;
+  height: max-content;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0 auto;
+  padding: 0;
+  top: 50px;
+  width: 100%;
+  height: 100%;
+  background-color: #151426;
+}
+
+.calendar {
+  height: 375px;
+  width: max-content;
+  background-color: #151426;
+  border-radius: 25px;
+  overflow: hidden;
+  padding: 30px 50px 28px 50px;
+  border: 2px solid white;
+}
+
+.calendar-header {
+  background: #9796f0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 700;
+  color: var(--white);
+  padding: 10px;
+  border-radius: 10px;
+}
+.calendar-body {
+  pad: 10px;
+}
+.calendar-week-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  font-weight: 600;
+  cursor: pointer;
+  color:rgb(255, 255, 255);
+}
+.calendar-week-days div:hover {
+color:rgb(255, 255, 255);
+transform: scale(1.2);
+transition: all .2s ease-in-out;
+}
+.calendar-week-days div {
+  display: grid;
+  place-items: center;
+  color: white;
+  height: 50px;
+}
+.calendar-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+  color: white;
+}
+.calendar-days div {
+  width: 37px;
+  height: 33px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  position: relative;
+  cursor: pointer;
+  animation: to-top 1s forwards;
+}
+.month-picker {
+  padding: 5px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.month-picker:hover {
+  background-color: var(--color-hover);
+}
+.month-picker:hover {
+  color: var(--color-txt);
+}
+.year-picker {
+  display: flex;
+  align-items: center;
+}
+
+.year-change {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  margin: 0px 10px;
+  cursor: pointer;
+}
+.year-change:hover {
+  background-color: var(--light-btn);
+  transition:all .2s ease-in-out ;
+  transform: scale(1.12);
+}
+.year-change:hover pre {
+  color: var(--bg-body);
+}
+.calendar-footer {
+  padding: 10px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+#year {
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+#year:hover {
+  transform: scale(1.2);
+}
+
+.calendar-days div span {
+  position: absolute;
+}
+ .calendar-days div:hover {
+  transition: width 0.2s ease-in-out, height 0.2s ease-in-out;
+  background-color: #fbc7d4;
+  border-radius: 20%;
+  color: var(--dark-text);
+}
+.calendar-days div.current-date {
+  color: white;
+  background-color: var(--light-btn);
+  border-radius: 20%;
+}
+.month-list {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #7e79e0;
+  color: white;
+  border: 1px solid #151426;
+  max-height: 200px;
+  overflow-y: auto;
+  display: none;
+  border-radius: 10px;
+}
+
+.show {
+  display: block; 
+}
+
+.month-list > div {
+  display: grid;
+  place-content: center;
+  margin: 5px 10px;
+  transition: all 0.2s ease-in-out;
+}
+.month-list > div > div {
+  border-radius: 15px;
+  padding: 10px;
+  cursor: pointer;
+}
+.month-list > div > div:hover {
+  background-color:var(--light-btn);
+  color: white;
+  transform: scale(0.9);
+  transition: all 0.2s ease-in-out;
+}
+.month-list.show {
+  visibility: visible;
+  pointer-events: visible;
+  transition: 0.6s ease-in-out;
+  animation: to-left .71s forwards;
+}
+.month-list.hideonce{
+  visibility: hidden;
+}
+.month-list.hide {
+  animation: to-right 1s forwards;
+  visibility: none;
+  pointer-events: none;
+}
+
+@keyframes to-top {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(100%);
+    opacity: 1;
+  }
+}
+@keyframes to-left {
+  0% {
+    transform: translatex(230%);
+    opacity: 1;
+  }
+  100% {
+    transform: translatex(0);
+    opacity: 1;
+  }
+}
+@keyframes to-right {
+  10% {
+    transform: translatex(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translatex(-150%);
+    opacity: 1;
+  }
+}
+@keyframes showtime {
+  0% {
+    transform: translatex(250%);
+    opacity: 1;
+  }
+  100% {
+    transform: translatex(0%);
+    opacity: 1;
+  }
+}
+@keyframes hidetime {
+  0% {
+    transform: translatex(0%);
+    opacity: 1;
+  }
+  100% {
+    transform: translatex(-370%);
+    opacity: 1;
+  }
+}
+@media (max-width:375px) {
+  .month-list>div{
+
+    margin: 5px 0px;
+  }
+}
+
+body {
+  margin: 0;
+  font: normal 1em/1.4 system-ui;
+  line-height: 1.5;
+}
+
+.wrapper {
+  display: flex;
+  height: 100vh;
+}
+
+.main {
+  flex-grow: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.side-panel-toggle {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  color: #ffffff;
+  background: #151426;
+  border: none;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  cursor: pointer;
+}
+
+.side-panel-toggle:hover {
+  background: #7372b3;
+}
+
+.side-panel {
+  width: 450px;
+  background-color: #151426;
+  transition: width 0.5s ease;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.side-panel-expanded {
+  width: 45%;
+  flex-shrink: 0;
+  padding: 20px;
+  background-color: #151426;
+}
+
+.side-panel-open .side-panel {
+  display: initial;
+}
+
+.side-panel-open .sp-icon-open {
+  display: none !important;
+}
+
+.side-panel-open .sp-icon-close {
+  display: initial !important;
+}
+
+#to-bigger-calendar {
+  display: block;
+  font: system-ui;
+  margin: 20px auto;
+  font-size: 12px;
+  text-align: center;
+  color: #9796f0;
+  width: max-content;
+}
+
+#to-bigger-calendar:hover {
+  color: #b4b3f7;
+}
+
+.other-stuff-container {
+  margin-left: 20px;
+  margin-right: auto;
+}
+
+.calendar-headings {
+  color: white;
+  font: system-ui;
+  font-weight: 600;
+  font-size: 20px;
+  text-decoration: underline;
+  padding-top: 30px;
+  padding-bottom: 10px;
+  text-align: left !important;
+}
+
+.other-stuff-container select {
+  margin-bottom: 10px;
+  border-radius: 10px;
+  height: 2em;
+  width: max-content;
+  border: 1px solid #151426;
+  color: #151426;
+  cursor: pointer;
+}
+
+.other-stuff-container h3, p {
+  color: white;
+}
+
+.description {
+  margin-bottom: 15px;
+}
+
+.to-opiq {
+  text-decoration: none;
+  color:white;
+}
+
+.opiq-container {
+  display: none;
+  width: 50%;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.side-panel-expanded .opiq-container {
+  display: block;
+  opacity: 1;
+}
+
+@media (min-width: 768px) {
+  .other-stuff-container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .opiq-container {
+    width: 50%;
+  }
+}
+
+
+.fwork-container {
+  max-width: 250px;
+}

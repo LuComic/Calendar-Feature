@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kalender</title>
+  <script src="java.js" defer></script>
+  <link href="styles.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+  <div class="wrapper">
+    <div class="main">
+    </div>
+    <button class="side-panel-toggle" type="button">
+      <span class="material-icons sp-icon-open">keyboard_double_arrow_left</span>
+      <span class="material-icons sp-icon-close" style="display: none;">keyboard_double_arrow_right</span>
+    </button>    
+    <div class="side-panel">
+      <div class="container">
+        <div class="calendar-container">
+          <div class="calendar">
+            <div class="calendar-header">
+              <span class="month-picker" id="month-picker"> May </span>
+              <div class="year-picker" id="year-picker">
+                <span class="year-change" id="pre-year">
+                  <pre><</pre>
+                </span>
+                <span id="year">2020 </span>
+                <span class="year-change" id="next-year">
+                  <pre>></pre>
+                </span>
+              </div>
+            </div>
+            <div class="calendar-body">
+              <div class="calendar-week-days">
+                <div>E</div>
+                <div>T</div>
+                <div>K</div>
+                <div>N</div>
+                <div>R</div>
+                <div>L</div>
+                <div>P</div>
+              </div>            
+              <div class="calendar-days">
+              </div>
+            </div>
+            <div class="calendar-footer">
+            </div>
+            <a href="youtube.com" id="to-bigger-calendar">Vaata täpsemalt</a>
+            <div class="month-list"></div>
+          </div>
+        </div>
+        <div class="other-stuff-container">
+          <div class="fwork-container">
+            <h2 class="calendar-headings" id="fwork">Tulevased tööd:</h2>
+            <select id="referrer" name="referrer">
+              <option value="">Kõik</option>
+              <option value="1">Matemaatika</option>
+              <option value="2">Kirjandus</option>
+              <option value="3">Ajalugu</option>
+              <option value="4">Keemia</option>
+              <option value="5">Füüsika</option>
+              <option value="6">Muusika</option>
+              <option value="7">Bioloogia</option>
+              <option value="8">Inglise keel</option>
+              <option value="9">Eesti keel</option>
+            </select>
+            <h3 class="topic">Matemaatika</h3>
+            <p class="description">Kontrolltöö: Joonte võrrandid</p>
+            <h3 class="topic">Ajalugu</h3>
+            <p class="description">Kontrolltöö: Prantsuse rev.</p>
+            <h3 class="topic">Inglise keel</h3>
+            <p class="description">Tunnikontroll: word formation</p>
+          </div>
+          <div class="opiq-container">
+            <h2 class="calendar-headings">Opiq</h2>
+            <a href="opiq.ee" class="to-opiq"><h3 class="topic">Kahe sirge vastastikused asendid</h3>
+            <p class="description">Tähtaeg 02.06.24 - 3 ül — Matemaatika PALLAS 5.kursus — Kodutöö</p></a>
+            <a href="opiq.ee" class="to-opiq"><h3 class="topic">Muusikatööstuse uued väljakutsed</h3>
+            <p class="description">Tähtaeg 03.05.24 - 2 ül — Muusikaajalugu I (ajajoon), Pallas — Arvestuslik</p></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

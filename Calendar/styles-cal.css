@@ -1,0 +1,49 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+#calendar {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.month {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.weekdays {
+  display: flex;
+  justify-content: space-between;
+  background-color: #f2f2f2;
+  padding: 5px;
+}
+
+.weekdays div {
+  width: calc(100% / 7);
+  text-align: center;
+}
+
+.days {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.days div {
+  width: calc(100% / 7);
+  text-align: center;
+  padding: 10px 0;
+  border: 1px solid #ddd;
+  cursor: pointer;
+}
+
+.prev, .next {
+  cursor: pointer;
+  float: left;
+  padding: 5px;
+  background-color: #f2f2f2;
+}
+
+.today {
+  background-color: #ffe066;
+}
