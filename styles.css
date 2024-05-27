@@ -382,7 +382,6 @@ body {
 }
 
 .opiq-container {
-  display: none;
   width: 50%;
   opacity: 0;
   transition: opacity 0.5s ease;

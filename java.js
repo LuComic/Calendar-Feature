@@ -146,13 +146,13 @@ document.querySelector(".side-panel-toggle").addEventListener("click", () => {
   // Adjusting styles based on the panel state
   if (isOpen) {
     sidePanel.style.width = "45%";
-    iconOpen.style.display = "none";
-    iconClose.style.display = "initial";
+    iconOpen.style.opacity = 0;
+    iconClose.style.opacity = 1;
     document.querySelector('.opiq-container').classList.add('showtime');
   } else {
     sidePanel.style.width = "450px";
-    iconOpen.style.display = "initial";
-    iconClose.style.display = "none";
+    iconOpen.style.opacity = 1;
+    iconClose.style.opacity = 0;
     setTimeout(() => {
       document.querySelector('.opiq-container').classList.remove('showtime');
     }, 500);
