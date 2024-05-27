@@ -148,11 +148,15 @@ document.querySelector(".side-panel-toggle").addEventListener("click", () => {
     sidePanel.style.width = "45%";
     iconOpen.style.opacity = 0;
     iconClose.style.opacity = 1;
+    iconOpen.style.display = 'none';
+    iconClose.style.display = 'block';
     document.querySelector('.opiq-container').classList.add('showtime');
   } else {
     sidePanel.style.width = "450px";
     iconOpen.style.opacity = 1;
     iconClose.style.opacity = 0;
+    iconOpen.style.display = 'block';
+    iconClose.style.display = 'none';
     setTimeout(() => {
       document.querySelector('.opiq-container').classList.remove('showtime');
     }, 500);

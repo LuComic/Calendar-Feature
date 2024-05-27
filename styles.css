@@ -384,7 +384,7 @@ body {
 .opiq-container {
   width: 50%;
   opacity: 0;
-  transition: opacity 0.2s ease;
+  transition: opacity 0.25s ease;
 }
 
 .side-panel-expanded .opiq-container {
