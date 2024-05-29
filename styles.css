@@ -25,7 +25,7 @@ body {
   background: #cac8ff;
 }
 .container {
-  width: max-content;
+  width: 90%;
   height: max-content;
   position: relative;
   display: flex;
@@ -41,12 +41,12 @@ body {
 }
 
 .calendar {
-  height: 375px;
+  height: 357px;
   width: max-content;
   background-color: #151426;
   border-radius: 25px;
   overflow: hidden;
-  padding: 30px 50px 28px 50px;
+  padding: 20px 25px 0px 25px;
   border: 2px solid white;
 }
 
@@ -57,11 +57,11 @@ body {
   align-items: center;
   font-weight: 700;
   color: var(--white);
-  padding: 10px;
+  padding: 5px;
   border-radius: 10px;
 }
 .calendar-body {
-  pad: 10px;
+  pad: 5px;
 }
 .calendar-week-days {
   display: grid;
@@ -79,7 +79,7 @@ transition: all .2s ease-in-out;
   display: grid;
   place-items: center;
   color: white;
-  height: 50px;
+  height: 40px;
 }
 .calendar-days {
   display: grid;
@@ -302,7 +302,7 @@ body {
 }
 
 .side-panel {
-  width: 450px;
+  width: 350px;
   background-color: #151426;
   transition: width 0.5s ease;
   padding: 20px;
@@ -356,6 +356,7 @@ body {
   padding-top: 30px;
   padding-bottom: 10px;
   text-align: left !important;
+  width: 275px;
 }
 
 .other-stuff-container select {
@@ -406,4 +407,5 @@ body {
 
 .fwork-container {
   max-width: 250px;
+  margin-left: 0px;
 }

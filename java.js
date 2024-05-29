@@ -152,7 +152,7 @@ document.querySelector(".side-panel-toggle").addEventListener("click", () => {
     iconClose.style.display = 'block';
     document.querySelector('.opiq-container').classList.add('showtime');
   } else {
-    sidePanel.style.width = "450px";
+    sidePanel.style.width = "350px";
     iconOpen.style.opacity = 1;
     iconClose.style.opacity = 0;
     iconOpen.style.display = 'block';
