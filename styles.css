@@ -68,24 +68,24 @@ body {
   grid-template-columns: repeat(7, 1fr);
   font-weight: 600;
   cursor: pointer;
-  color:rgb(255, 255, 255);
+  color: var(--white);
 }
 .calendar-week-days div:hover {
-color:rgb(255, 255, 255);
+color: var(--white);
 transform: scale(1.2);
 transition: all .2s ease-in-out;
 }
 .calendar-week-days div {
   display: grid;
   place-items: center;
-  color: white;
+  color: var(--white);
   height: 40px;
 }
 .calendar-days {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   gap: 2px;
-  color: white;
+  color: var(--white);
 }
 .calendar-days div {
   width: 37px;
@@ -156,7 +156,7 @@ transition: all .2s ease-in-out;
   color: var(--dark-text);
 }
 .calendar-days div.current-date {
-  color: white;
+  color: var(--white);
   background-color: var(--light-btn);
   border-radius: 20%;
 }
@@ -165,7 +165,7 @@ transition: all .2s ease-in-out;
   top: 0;
   left: 0;
   background-color: #7e79e0;
-  color: white;
+  color: var(--white);
   border: 1px solid #151426;
   max-height: 200px;
   overflow-y: auto;
@@ -190,7 +190,7 @@ transition: all .2s ease-in-out;
 }
 .month-list > div > div:hover {
   background-color:var(--light-btn);
-  color: white;
+  color: var(--white);
   transform: scale(0.9);
   transition: all 0.2s ease-in-out;
 }
@@ -266,6 +266,14 @@ transition: all .2s ease-in-out;
   }
 }
 
+.placeholder {
+  visibility: hidden;
+}
+
+.calendar-days div.weekend {
+  color: #9796f0;
+}
+
 body {
   margin: 0;
   font: normal 1em/1.4 system-ui;
@@ -289,7 +297,7 @@ body {
   flex-shrink: 0;
   display: grid;
   place-items: center;
-  color: #ffffff;
+  color: var(--white);
   background: #151426;
   border: none;
   border-radius: 5px 0 0 5px;
